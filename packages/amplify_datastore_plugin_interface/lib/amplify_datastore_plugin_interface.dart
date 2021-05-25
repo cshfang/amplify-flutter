@@ -47,7 +47,7 @@ abstract class DataStorePluginInterface extends AmplifyPluginInterface {
   /// modelProvider
   final ModelProviderInterface modelProvider;
 
-  /// Datastore sync interval (in melliseconds)
+  /// Datastore sync interval (in milliseconds)
   final double syncInterval;
 
   /// Datastore max number of records to sync
