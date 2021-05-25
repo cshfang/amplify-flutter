@@ -31,7 +31,7 @@ class AmplifyDataStoreMethodChannel extends AmplifyDataStore {
   @override
   Future<void> configureDataStore(
       {ModelProviderInterface modelProvider,
-      double syncInterval,
+      int syncInterval,
       int syncMaxRecords,
       int syncPageSize}) async {
     try {

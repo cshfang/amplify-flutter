@@ -30,14 +30,14 @@ class AmplifyDataStore extends DataStorePluginInterface {
   /// Constructs an AmplifyDataStore plugin with mandatory [modelProvider]
   /// and optional datastore configuration properties including
   ///
-  /// [syncInterval]: datastore syncing interval (in melliseconds)
+  /// [syncInterval]: datastore syncing interval (in seconds)
   ///
   /// [syncMaxRecords]: max number of records to sync
   ///
   /// [syncPageSize]: page size to sync
   AmplifyDataStore(
       {@required ModelProviderInterface modelProvider,
-      double syncInterval,
+      int syncInterval,
       int syncMaxRecords,
       int syncPageSize})
       : super(
@@ -63,7 +63,7 @@ class AmplifyDataStore extends DataStorePluginInterface {
   @override
   Future<void> configureDataStore(
       {ModelProviderInterface modelProvider,
-      double syncInterval,
+      int syncInterval,
       int syncMaxRecords,
       int syncPageSize}) async {
     ModelProviderInterface provider =

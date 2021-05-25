@@ -47,8 +47,8 @@ abstract class DataStorePluginInterface extends AmplifyPluginInterface {
   /// modelProvider
   final ModelProviderInterface modelProvider;
 
-  /// Datastore sync interval (in milliseconds)
-  final double syncInterval;
+  /// Datastore sync interval (in seconds)
+  final int syncInterval;
 
   /// Datastore max number of records to sync
   final int syncMaxRecords;
@@ -68,18 +68,17 @@ abstract class DataStorePluginInterface extends AmplifyPluginInterface {
   /// Configure AmplifyDataStore plugin with mandatory [modelProvider]
   /// and optional datastore configuration properties including
   ///
-  /// [syncInterval]: datastore syncing interval (in melliseconds)
+  /// [syncInterval]: datastore syncing interval (in seconds)
   ///
   /// [syncMaxRecords]: max number of records to sync
   ///
   /// [syncPageSize]: page size to sync
   Future<void> configureDataStore(
       {@required ModelProviderInterface modelProvider,
-      double syncInterval,
+      int syncInterval,
       int syncMaxRecords,
       int syncPageSize}) {
-    throw UnimplementedError(
-        'configureDataStore() has not been implemented.');
+    throw UnimplementedError('configureDataStore() has not been implemented.');
   }
 
   Future<void> setUpObserve() {
