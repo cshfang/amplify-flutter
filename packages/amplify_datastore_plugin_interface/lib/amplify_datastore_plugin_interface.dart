@@ -79,7 +79,7 @@ abstract class DataStorePluginInterface extends AmplifyPluginInterface {
       int syncMaxRecords,
       int syncPageSize}) {
     throw UnimplementedError(
-        'configureModelProvider() has not been implemented.');
+        'configureDataStore() has not been implemented.');
   }
 
   Future<void> setUpObserve() {
