@@ -147,17 +147,14 @@ class AmplifyDataStorePlugin : FlutterPlugin, MethodCallHandler {
 
         val defaultDataStoreConfiguration = DataStoreConfiguration.defaults();
         val syncInterval: Long =
-            if (request["syncInterval"] is Int)
-                TimeUnit.SECONDS.toMinutes((request["syncInterval"] as Int).toLong())
-            else defaultDataStoreConfiguration.syncIntervalInMinutes;
+            (request["syncInterval"] as? Int)?.toLong()
+                ?: defaultDataStoreConfiguration.syncIntervalInMinutes;
         val syncMaxRecords: Int =
-            if (request["syncMaxRecords"] is Int)
-                request["syncMaxRecords"] as Int
-            else defaultDataStoreConfiguration.syncMaxRecords;
+            (request["syncMaxRecords"] as? Int)
+                ?: defaultDataStoreConfiguration.syncMaxRecords;
         val syncPageSize: Int =
-            if(request["syncPageSize"] is Int)
-                request["syncPageSize"] as Int
-            else defaultDataStoreConfiguration.syncPageSize;
+            (request["syncPageSize"] as? Int)
+                ?: defaultDataStoreConfiguration.syncPageSize;
 
         try {
             Amplify.addPlugin(
