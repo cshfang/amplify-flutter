@@ -18,7 +18,7 @@ dependency_overrides:
   async: ^2.10.0
 
 dev_dependencies:
-  amplify_lints: ^2.0.0
+  amplify_lints: ^3.0.0
   drift_dev: ^2.2.0+1
   build_runner: ^2.2.1
   flutter_test:
